@@ -3,6 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
 SET(DEPENDENCIES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dependencies")
 
 include_directories(
@@ -19,7 +20,7 @@ find_package(OpenGL REQUIRED)
 IF(OpenGL_FOUND)
 	target_link_libraries(OpenGL_CMake ${OPENGL_LIBRARIES})
 ELSE()
-	message("ERROR: OpenGL not found!")
+	message("ERROR: OpenGL library not found!")
 ENDIF()
 
 
